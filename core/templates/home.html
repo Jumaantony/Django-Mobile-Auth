@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1> Django Twilio Verify Demon</h1>
+    <p>Hello {{ request.user.username }}</p>
+    <form method="post" action="{% url 'core:logout' %}">
+        {% csrf_token %}
+        <input type="submit" value="Logout">
+    </form>
+{% endblock %}
